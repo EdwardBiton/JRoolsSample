@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="helloWorldRule" class="com.teedrei.rools.rulesengine.impl.RuleImpl">
+		<property name="name" value="Hello World Rule - Create a greeting if a name is provided" />
+		<property name="condition">
+			<bean class="com.teedrei.rools.helloworld.HelloWorldCondition" />
+		</property>
+		<property name="actions">
+			<list>
+				<bean class="com.teedrei.rools.helloworld.HelloWorldAction" />
+			</list>
+		</property>
+		<property name="rules">
+			<list>
+				<ref bean="localizeGreetingRule" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="localizeGreetingRule" class="com.teedrei.rools.rulesengine.impl.RuleImpl">
+		<property name="name" value="Locale Greeting Rule - Create a localize greeting" />
+		<property name="condition">
+			<bean class="com.teedrei.rools.localize.LocalizeGreetingCondition" />
+		</property>
+		<property name="actions">
+			<list>
+				<bean class="com.teedrei.rools.localize.LocalizeGreetingAction" />
+			</list>
+		</property>
+	</bean>
+</beans>
+
