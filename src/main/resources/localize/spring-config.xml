@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="classpath:localize/rules-config.xml" />
+	<bean id="rulesEngineService" class="com.teedrei.rools.rulesengine.impl.RulesEngineServiceImpl">
+		<property name="rules">
+			<list>
+				<ref bean="helloWorldRule" />
+			</list>
+		</property>
+	</bean>
+</beans>
+

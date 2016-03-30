@@ -1,2 +1,2 @@
 # JRoolsSample
-Provides sample implementation using JRools
+A sample project using JRools
