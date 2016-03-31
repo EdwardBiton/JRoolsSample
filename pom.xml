@@ -61,6 +61,31 @@
 					<wtpversion>2.0</wtpversion>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<formats>
+						<format>xml</format>
+						<format>html</format>
+					</formats>
+					<excludes>
+						<!-- add packages to be excluded for coverage -->
+						<!-- 
+						<exclude>com/teedrei/**</exclude>
+						 -->
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>cobertura</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 </project>
